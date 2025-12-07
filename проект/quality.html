@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор ягод - Quality Ягоды</title>
+    <link rel="stylesheet" href="qualitycss.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Quality Ягоды</h1>
+            <p>Выберите ягоды для заказа</p>
+            <nav>
+                <a href="intel.html">Главная</a>
+                <a href="#">Виды ягод</a>
+                <a href="#">Все о ягодах</a>
+                <a href="quality.html">Заказ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="center">Выберите ягоды для заказа</h2>
+        <p class="center subtitle">Нажмите на ягоду, чтобы добавить её в корзину. Каждое нажатие - 500 грамм.</p>
+
+        <div class="berries-selection">
+            <div class="berry-item" data-name="Клубника" data-price="2250" data-color="#FF6B8B">
+                <div class="berry-image" style="background-color: #FF6B8B;"></div>
+                <div class="berry-info">
+                    <h3>Клубника</h3>
+                    <p class="berry-price">2250 ₸/кг</p>
+                    <p class="berry-desc">Сочная и сладкая</p>
+                    <button class="add-btn" onclick="addBerry('Клубника', 2250, '#FF6B8B')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Малина" data-price="2600" data-color="#E30B5C">
+                <div class="berry-image" style="background-color: #E30B5C;"></div>
+                <div class="berry-info">
+                    <h3>Малина</h3>
+                    <p class="berry-price">2600 ₸/кг</p>
+                    <p class="berry-desc">Ароматная и нежная</p>
+                    <button class="add-btn" onclick="addBerry('Малина', 2600, '#E30B5C')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Черника" data-price="3100" data-color="#4B0082">
+                <div class="berry-image" style="background-color: #4B0082;"></div>
+                <div class="berry-info">
+                    <h3>Черника</h3>
+                    <p class="berry-price">3100 ₸/кг</p>
+                    <p class="berry-desc">Полезна для зрения</p>
+                    <button class="add-btn" onclick="addBerry('Черника', 3100, '#4B0082')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Голубика" data-price="3750" data-color="#4169E1">
+                <div class="berry-image" style="background-color: #4169E1;"></div>
+                <div class="berry-info">
+                    <h3>Голубика</h3>
+                    <p class="berry-price">3750 ₸/кг</p>
+                    <p class="berry-desc">Антиоксиданты</p>
+                    <button class="add-btn" onclick="addBerry('Голубика', 3750, '#4169E1')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Ежевика" data-price="3400" data-color="#8B0000">
+                <div class="berry-image" style="background-color: #8B0000;"></div>
+                <div class="berry-info">
+                    <h3>Ежевика</h3>
+                    <p class="berry-price">3400 ₸/кг</p>
+                    <p class="berry-desc">Витамин C</p>
+                    <button class="add-btn" onclick="addBerry('Ежевика', 3400, '#8B0000')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Смородина черная" data-price="1450" data-color="#2F4F4F">
+                <div class="berry-image" style="background-color: #2F4F4F;"></div>
+                <div class="berry-info">
+                    <h3>Смородина черная</h3>
+                    <p class="berry-price">1450 ₸/кг</p>
+                    <p class="berry-desc">Богата витаминами</p>
+                    <button class="add-btn" onclick="addBerry('Смородина черная', 1450, '#2F4F4F')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Смородина красная" data-price="1350" data-color="#DC143C">
+                <div class="berry-image" style="background-color: #DC143C;"></div>
+                <div class="berry-info">
+                    <h3>Смородина красная</h3>
+                    <p class="berry-price">1350 ₸/кг</p>
+                    <p class="berry-desc">Кисло-сладкая</p>
+                    <button class="add-btn" onclick="addBerry('Смородина красная', 1350, '#DC143C')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Крыжовник" data-price="1600" data-color="#32CD32">
+                <div class="berry-image" style="background-color: #32CD32;"></div>
+                <div class="berry-info">
+                    <h3>Крыжовник</h3>
+                    <p class="berry-price">1600 ₸/кг</p>
+                    <p class="berry-desc">Зеленый и свежий</p>
+                    <button class="add-btn" onclick="addBerry('Крыжовник', 1600, '#32CD32')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Вишня" data-price="1900" data-color="#C71585">
+                <div class="berry-image" style="background-color: #C71585;"></div>
+                <div class="berry-info">
+                    <h3>Вишня</h3>
+                    <p class="berry-price">1900 ₸/кг</p>
+                    <p class="berry-desc">Сочная косточковая</p>
+                    <button class="add-btn" onclick="addBerry('Вишня', 1900, '#C71585')">+ Добавить</button>
+                </div>
+            </div>
+
+            <div class="berry-item" data-name="Черешня" data-price="2450" data-color="#FF4500">
+                <div class="berry-image" style="background-color: #FF4500;"></div>
+                <div class="berry-info">
+                    <h3>Черешня</h3>
+                    <p class="berry-price">2450 ₸/кг</p>
+                    <p class="berry-desc">Сладкая и крупная</p>
+                    <button class="add-btn" onclick="addBerry('Черешня', 2450, '#FF4500')">+ Добавить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-container">
+            <div class="cart-box">
+                <h3>Ваш заказ</h3>
+                <div class="selected-berries" id="selectedBerries">
+                    <p class="empty-cart">Корзина пуста. Добавьте ягоды.</p>
+                </div>
+                <div class="order-summary">
+                    <div class="summary-item">
+                        <span>Общий вес:</span>
+                        <span id="totalWeight">0 г</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Количество позиций:</span>
+                        <span id="totalItems">0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Итого к оплате:</span>
+                        <span id="totalAmount">0 ₸</span>
+                    </div>
+                </div>
+                <div class="order-buttons">
+                    <button class="calculate-btn" onclick="calculateTotal()">Подсчитать</button>
+                    <button class="clear-btn" onclick="clearCart()">Очистить корзину</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Каждое нажатие = 500 грамм ягод | Цены в тенге</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        const berryWeight = 500; // 500 грамм за одно нажатие
+
+        function addBerry(name, price, color) {
+            // Ищем ягоду в корзине
+            const existingBerry = cart.find(item => item.name === name);
+            
+            if (existingBerry) {
+                // Если уже есть, увеличиваем количество
+                existingBerry.quantity++;
+                existingBerry.totalPrice = existingBerry.quantity * (price / 2); // 500г = половина цены за кг
+            } else {
+                // Если новой нет, добавляем
+                cart.push({
+                    name: name,
+                    pricePerKg: price,
+                    color: color,
+                    quantity: 1,
+                    totalPrice: price / 2 // 500г = половина цены за кг
+                });
+            }
+            
+            updateCartDisplay();
+            updateSummary();
+        }
+
+        function removeBerry(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCartDisplay();
+            updateSummary();
+        }
+
+        function updateCartDisplay() {
+            const container = document.getElementById('selectedBerries');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="empty-cart">Корзина пуста. Добавьте ягоды.</p>';
+                return;
+            }
+            
+            let html = '';
+            cart.forEach(berry => {
+                html += `
+                    <div class="berry-in-cart" style="border-left-color: ${berry.color}">
+                        <div class="berry-name">
+                            <span class="berry-color" style="background-color: ${berry.color}"></span>
+                            <strong>${berry.name}</strong>
+                        </div>
+                        <div class="berry-details">
+                            <span>${berry.quantity} × 500г</span>
+                            <span>${berry.totalPrice.toFixed(0)} ₸</span>
+                            <button class="remove-btn" onclick="removeBerry('${berry.name}')">×</button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function updateSummary() {
+            const totalWeight = cart.reduce((sum, berry) => sum + (berry.quantity * berryWeight), 0);
+            const totalItems = cart.length;
+            const totalAmount = cart.reduce((sum, berry) => sum + berry.totalPrice, 0);
+            
+            document.getElementById('totalWeight').textContent = totalWeight + ' г';
+            document.getElementById('totalItems').textContent = totalItems;
+            document.getElementById('totalAmount').textContent = totalAmount.toFixed(0) + ' ₸';
+        }
+
+        function calculateTotal() {
+            const totalAmount = cart.reduce((sum, berry) => sum + berry.totalPrice, 0);
+            const totalWeight = cart.reduce((sum, berry) => sum + (berry.quantity * berryWeight), 0);
+            
+            // Анимация
+            const totalElement = document.getElementById('totalAmount');
+            totalElement.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                totalElement.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Показываем уведомление
+            if (cart.length > 0) {
+                alert(`Заказ оформлен!\n\nОбщий вес: ${totalWeight}г\nКоличество позиций: ${cart.length}\nСумма: ${totalAmount.toFixed(0)}₸\n\nСпасибо за заказ!`);
+            } else {
+                alert('Добавьте ягоды в корзину перед подсчетом!');
+            }
+        }
+
+        function clearCart() {
+            if (cart.length > 0) {
+                if (confirm('Вы уверены, что хотите очистить корзину?')) {
+                    cart = [];
+                    updateCartDisplay();
+                    updateSummary();
+                    alert('Корзина очищена!');
+                }
+            } else {
+                alert('Корзина уже пуста!');
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartDisplay();
+            updateSummary();
+        });
+    </script>
+
+</body>
+</html>

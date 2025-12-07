@@ -1,0 +1,237 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #fff5f5;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 40% 80%, rgba(255, 20, 147, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 60% 20%, rgba(220, 20, 60, 0.1) 2px, transparent 2px);
+    background-size: 50px 50px;
+    z-index: -1;
+}
+
+header {
+    background: #dc143c;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: none;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.2);
+}
+
+.header-content h1 {
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+    color: white;
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    color: #ffebee;
+    margin: 0 0 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    padding: 10px 22px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: #ff69b4;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #ff1493;
+    transform: scale(1.05);
+}
+
+main {
+    padding: 35px 25px;
+    background: white;
+    flex: 1;
+    max-width: 1000px;
+    margin: 30px auto;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+footer {
+    background: #ff69b4;
+    color: white;
+    padding: 25px 0;
+    margin-top: auto;
+    text-align: center;
+    border-top: none;
+    border-radius: 20px 20px 0 0;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #dc143c;
+}
+
+h2.center {
+    font-size: 1.9rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ffe4e1;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.content-container p {
+    margin-bottom: 22px;
+    padding: 18px;
+    background-color: #fff5f5;
+    border-left: none;
+    border-radius: 15px;
+    border: 1px solid #ffe4e1;
+}
+
+.berries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.berry-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.1);
+    border: 1px solid #ffe4e1;
+    transition: all 0.3s ease;
+}
+
+.berry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+}
+
+.berry-card h3 {
+    color: #dc143c;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.berry-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.highlight {
+    background: #ffebee;
+    padding: 4px 10px;
+    border-radius: 15px;
+    color: #dc143c;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 15px;
+        border-radius: 0 0 15px 15px;
+    }
+    
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    nav {
+        gap: 10px;
+    }
+    
+    nav a {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+    
+    main {
+        padding: 25px 20px;
+        margin: 20px auto;
+        border-radius: 15px;
+    }
+    
+    h2.center {
+        font-size: 1.6rem;
+    }
+    
+    .berries-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    nav a {
+        width: 90%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    body::before {
+        background-size: 30px 30px;
+    }
+}
