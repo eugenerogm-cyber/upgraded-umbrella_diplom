@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ягоды купить</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="shop-name">Ягодная лавка</div>
+            <div class="menu">
+                <a href="index.html">На главную</a>
+                <a href="index2.html" class="active">Ягоды</a>
+                <a href="#">Советы</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main wrap">
+        <div class="intro">
+            <h1>Свежие ягоды</h1>
+            <p>Собираем в чистых местах. Доставка от 3000 тг бесплатно.</p>
+        </div>
+
+        <div class="products">
+            <h2>Выбрать ягоды</h2>
+            <div class="product-list">
+                <div class="product">
+                    <h3>Клубника</h3>
+                    <div class="cost">2000 тг/кг</div>
+                    <p>Сладкая, свежая, для десертов.</p>
+                    <div class="counter">
+                        <button class="minus" data-name="клубника">-</button>
+                        <span class="num" data-name="клубника">0</span> кг
+                        <button class="plus" data-name="клубника">+</button>
+                    </div>
+                    <button class="btn-add" data-name="клубника" data-cost="2000">В корзину</button>
+                </div>
+
+                <div class="product">
+                    <h3>Черника</h3>
+                    <div class="cost">2500 тг/кг</div>
+                    <p>Для зрения, с антиоксидантами.</p>
+                    <div class="counter">
+                        <button class="minus" data-name="черника">-</button>
+                        <span class="num" data-name="черника">0</span> кг
+                        <button class="plus" data-name="черника">+</button>
+                    </div>
+                    <button class="btn-add" data-name="черника" data-cost="2500">В корзину</button>
+                </div>
+
+                <div class="product">
+                    <h3>Малина</h3>
+                    <div class="cost">2200 тг/кг</div>
+                    <p>Ароматная, для варенья.</p>
+                    <div class="counter">
+                        <button class="minus" data-name="малина">-</button>
+                        <span class="num" data-name="малина">0</span> кг
+                        <button class="plus" data-name="малина">+</button>
+                    </div>
+                    <button class="btn-add" data-name="малина" data-cost="2200">В корзину</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="basket-box">
+            <h2>Ваша корзина</h2>
+            <div id="basket" class="basket">
+                <p class="empty">Корзина пуста</p>
+            </div>
+            <div class="total">
+                <p>Всего: <span id="sum">0</span> тг</p>
+                <button id="buy" class="btn-buy" disabled>Оплатить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="wrap">
+            <p>Спасибо! Работаем с 9 до 21.</p>
+        </div>
+    </div>
+
+    <script>
+        let basketData = {
+            'клубника': { cost: 2000, amount: 0 },
+            'черника': { cost: 2500, amount: 0 },
+            'малина': { cost: 2200, amount: 0 }
+        };
+
+        const basketEl = document.getElementById('basket');
+        const sumEl = document.getElementById('sum');
+        const buyBtn = document.getElementById('buy');
+
+        function updateNumbers() {
+            for (let berry in basketData) {
+                let numEl = document.querySelector(`.num[data-name="${berry}"]`);
+                if (numEl) numEl.textContent = basketData[berry].amount;
+            }
+        }
+
+        function refreshBasket() {
+            basketEl.innerHTML = '';
+            let total = 0;
+            let hasItems = false;
+
+            for (let berry in basketData) {
+                if (basketData[berry].amount > 0) {
+                    hasItems = true;
+                    let itemSum = basketData[berry].amount * basketData[berry].cost;
+                    total += itemSum;
+
+                    let item = document.createElement('div');
+                    item.className = 'basket-item';
+                    item.innerHTML = `
+                        <div class="item-info">
+                            <div class="item-name">${berry}</div>
+                            <div class="item-amount">${basketData[berry].amount} кг × ${basketData[berry].cost} тг</div>
+                        </div>
+                        <div class="item-sum">${itemSum} тг</div>
+                        <button class="btn-del" data-name="${berry}">×</button>
+                    `;
+                    basketEl.appendChild(item);
+                }
+            }
+
+            if (!hasItems) {
+                basketEl.innerHTML = '<p class="empty">Корзина пуста</p>';
+            }
+
+            sumEl.textContent = total;
+            buyBtn.disabled = total === 0;
+            
+            localStorage.setItem('basketSave', JSON.stringify(basketData));
+        }
+
+        function showMessage() {
+            let msg = document.createElement('div');
+            msg.className = 'message';
+            msg.innerHTML = '<h4>Заказ принят!</h4>';
+            
+            for (let berry in basketData) {
+                if (basketData[berry].amount > 0) {
+                    let itemSum = basketData[berry].amount * basketData[berry].cost;
+                    msg.innerHTML += `<p>${basketData[berry].amount} кг ${berry} - ${itemSum} тг</p>`;
+                }
+            }
+            
+            msg.innerHTML += `<p><b>Итого: ${sumEl.textContent} тг</b></p>`;
+            document.body.appendChild(msg);
+
+            for (let berry in basketData) {
+                basketData[berry].amount = 0;
+                updateNumbers();
+            }
+            refreshBasket();
+
+            setTimeout(() => {
+                if (msg.parentNode) msg.remove();
+            }, 5000);
+        }
+
+        document.querySelectorAll('.plus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                let berryName = this.getAttribute('data-name');
+                basketData[berryName].amount++;
+                updateNumbers();
+            });
+        });
+
+        document.querySelectorAll('.minus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                let berryName = this.getAttribute('data-name');
+                if (basketData[berryName].amount > 0) {
+                    basketData[berryName].amount--;
+                    updateNumbers();
+                }
+            });
+        });
+
+        document.querySelectorAll('.btn-add').forEach(btn => {
+            btn.addEventListener('click', function() {
+                let berryName = this.getAttribute('data-name');
+                if (basketData[berryName].amount > 0) {
+                    refreshBasket();
+                    let oldText = this.textContent;
+                    this.textContent = '✓ Добавлено';
+                    setTimeout(() => {
+                        this.textContent = oldText;
+                    }, 1000);
+                } else {
+                    let oldText = this.textContent;
+                    this.textContent = 'Укажите вес';
+                    setTimeout(() => {
+                        this.textContent = oldText;
+                    }, 1000);
+                }
+            });
+        });
+
+        buyBtn.addEventListener('click', function() {
+            showMessage();
+        });
+
+        basketEl.addEventListener('click', function(e) {
+            if (e.target.classList.contains('btn-del')) {
+                let berryName = e.target.getAttribute('data-name');
+                basketData[berryName].amount = 0;
+                updateNumbers();
+                refreshBasket();
+            }
+        });
+
+        let saved = localStorage.getItem('basketSave');
+        if (saved) {
+            let loaded = JSON.parse(saved);
+            for (let berry in loaded) {
+                if (basketData[berry]) {
+                    basketData[berry].amount = loaded[berry].amount;
+                }
+            }
+            updateNumbers();
+            refreshBasket();
+        }
+    </script>
+</body>
+</html>
