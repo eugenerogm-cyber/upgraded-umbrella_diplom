@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Купить ягоды - Ягодный магазин</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Ягодный магазин</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index2.html">О нас</a></li>
+                    <li><a href="index3.html">Цены</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Купить свежие ягоды</h1>
+            <p>Выберите понравившиеся ягоды и добавьте их в корзину. Доставка по всему городу в день заказа!</p>
+        </section>
+        
+        <section>
+            <h2>Наш ассортимент</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=400&h=300&fit=crop" alt="Клубника">
+                    </div>
+                    <h3 class="product-title">Клубника</h3>
+                    <p class="product-description">Свежая сладкая клубника с полей. Идеальна для десертов и в свежем виде.</p>
+                    <div class="product-price">2 500 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Клубника', 2500)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400&h=300&fit=crop" alt="Черника">
+                    </div>
+                    <h3 class="product-title">Черника</h3>
+                    <p class="product-description">Лесная черника, богатая антиоксидантами. Полезна для зрения.</p>
+                    <div class="product-price">3 200 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Черника', 3200)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHB72o5q3r76byQgXOHZ6qTwtGL-gh0ZZOTw&s" alt="Малина">
+                    </div>
+                    <h3 class="product-title">Малина</h3>
+                    <p class="product-description">Ароматная садовая малина. Обладает полезными свойствами.</p>
+                    <div class="product-price">2 800 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Малина', 2800)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXAOphBQnu-_ODYCXcL1xwzIZijyz_52qHwQ&s" alt="Смородина">
+                    </div>
+                    <h3 class="product-title">Смородина</h3>
+                    <p class="product-description">Черная смородина с высоким содержанием витамина C.</p>
+                    <div class="product-price">1 800 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Смородина', 1800)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.yamdiet.com/wp-content/uploads/zavtrak-golubika-e1667965694756.jpg" alt="Голубика">
+                    </div>
+                    <h3 class="product-title">Голубика</h3>
+                    <p class="product-description">Крупная садовая голубика. Содержит витамины и минералы.</p>
+                    <div class="product-price">3 500 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Голубика', 3500)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFNdcpPs4-o5JR6ffzsHL8f_WV8jioIXQbBw&s" alt="Ежевика">
+                    </div>
+                    <h3 class="product-title">Ежевика</h3>
+                    <p class="product-description">Сочная ежевика с насыщенным вкусом. Подходит для варенья и выпечки.</p>
+                    <div class="product-price">2 900 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Ежевика', 2900)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.ohotniki.ru/upload/entities/2024/09/13/11/articles/detailPicture/40/8d/1d/c3/b8061924d257a20d2611599adbe887c6.jpg" alt="Клюква">
+                    </div>
+                    <h3 class="product-title">Клюква</h3>
+                    <p class="product-description">Болотная клюква. Отличное средство при простуде.</p>
+                    <div class="product-price">2 200 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Клюква', 2200)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbw06x8yk9AtWd3AmOM7hRAd_nkvCG-9pczg&s" alt="Вишня">
+                    </div>
+                    <h3 class="product-title">Вишня</h3>
+                    <p class="product-description">Сладкая вишня без косточек. Идеальна для пирогов и компотов.</p>
+                    <div class="product-price">2 000 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Вишня', 2000)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.prom.ua/1301746859_w1280_h640_1301746859.jpg" alt="Крыжовник">
+                    </div>
+                    <h3 class="product-title">Крыжовник</h3>
+                    <p class="product-description">Зеленый крыжовник с нежным вкусом. Подходит для варенья.</p>
+                    <div class="product-price">1 700 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Крыжовник', 1700)">Купить 1 кг</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://vashnil.ru/upload/thumbs/article_big/news/image/4138395_65794537a0f0a.jpg" alt="Брусника">
+                    </div>
+                    <h3 class="product-title">Брусника</h3>
+                    <p class="product-description">Лесная брусника с характерной кислинкой. Полезна для почек.</p>
+                    <div class="product-price">3 000 ₸/кг</div>
+                    <button class="buy-btn" onclick="buyBerry('Брусника', 3000)">Купить 1 кг</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">       
+            <div class="copyright">
+                <p>Спасибо за покупку!</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function buyBerry(name, price) {
+            alert(`Вы купили 1 кг ${name} за ${price} тенге\nСпасибо за покупку!`);
+        }
+    </script>
+</body>
+</html>
